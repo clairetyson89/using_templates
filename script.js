@@ -1,10 +1,10 @@
-var map = L.map('mapID').setView([38.62287573495131, -90.24063084434881], 6);
+var map = L.map('mapID').setView([38.62677384139302, -90.19857584848421], 11.5);
 
   // load a tile layer
  L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext}', {
 	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 	subdomains: 'abcd',
-	minZoom: 0,
+	minZoom: 1,
 	maxZoom: 20,
 	ext: 'png'
 }).addTo(map);
@@ -15,57 +15,56 @@ var geojsonFeature = {
   "features": [
     {
       "type": "Feature",
-      "properties": {
-        "Name": "Albuquerque",
-        "Population": "100,000"
-      },
+      "properties": {},
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -106.644287109375,
-          35.110921809704756
+          -90.23260116577148,
+          38.63953406479131
         ]
       }
     },
     {
       "type": "Feature",
-      "properties": {
-        "Name": "Denver",
-        "Population": "1,000,000"
-      },
+      "properties": {},
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -104.9853515625,
-          39.740986355883564
+          -90.21371841430664,
+          38.62143058055104
         ]
       }
     },
     {
       "type": "Feature",
-      "properties": {
-        "Name": "Pueblo",
-        "Population": "1,000"
-      },
+      "properties": {},
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -104.56787109374999,
-          38.272688535980976
+          -90.24667739868164,
+          38.62531986267628
         ]
       }
     },
     {
       "type": "Feature",
-      "properties": {
-        "Name": "Bloomfield",
-        "Population": "10,000"
-      },
+      "properties": {},
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -107.984619140625,
-          36.73888412439431
+          -90.21509170532227,
+          38.65012583524745
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.25423049926758,
+          38.64422681447823
         ]
       }
     }
@@ -74,7 +73,7 @@ var geojsonFeature = {
 
 var feat = L.geoJSON(geojsonFeature).addTo(map);
 
-feat.bindPopup("<b>Hello world! I'm marker 1</b><br>I am a popup.").openPopup();
+feat.bindPopup("<b>I'm a marker</b><br>I'm a popup.").openPopup();
 
 var myLines = {
   "type": "FeatureCollection",
@@ -146,45 +145,42 @@ L.geoJSON(myLines, {
     style: myStyle
 }).addTo(map);
 
-var states = [{
+var parks = [{
   "type": "FeatureCollection",
   "features": [
     {
       "type": "Feature",
       "properties": {
-        "party": "Democrat"
+        "Park": "Forest Park",
+        "Dog Park": "Yes"
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              -114.60937499999999,
-              35.137879119634185
+              -90.30109405517577,
+              38.64771265817877
             ],
             [
-              -113.90625,
-              36.421282443649496
+              -90.30487060546875,
+              38.634036452919226
             ],
             [
-              -113.9501953125,
-              42.16340342422401
+              -90.26504516601562,
+              38.62974534092597
             ],
             [
-              -119.970703125,
-              42.09822241118974
+              -90.26710510253906,
+              38.638863646894464
             ],
             [
-              -119.970703125,
-              38.85682013474361
+              -90.26710510253906,
+              38.64369051578083
             ],
             [
-              -114.697265625,
-              35.35321610123823
-            ],
-            [
-              -114.60937499999999,
-              35.137879119634185
+              -90.30109405517577,
+              38.64771265817877
             ]
           ]
         ]
@@ -193,73 +189,95 @@ var states = [{
     {
       "type": "Feature",
       "properties": {
-        "party": "Republican"
+        "Park": "Tower Grove Park",
+        "Dog Park": "No"
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              -114.06005859375,
-              41.983994270935625
+              -90.2688217163086,
+              38.60962732987789
             ],
             [
-              -113.51074218749999,
-              40.613952441166596
+              -90.2691650390625,
+              38.60587134283919
             ],
             [
-              -113.73046875,
-              36.98500309285596
+              -90.24307250976562,
+              38.603188374582146
             ],
             [
-              -108.96240234375,
-              37.142803443716836
+              -90.2420425415039,
+              38.60721278935162
             ],
             [
-              -109.248046875,
-              40.91351257612758
+              -90.2578353881836,
+              38.60909077233832
             ],
             [
-              -111.005859375,
-              40.94671366508002
+              -90.25680541992188,
+              38.61687046392973
             ],
             [
-              -110.9619140625,
-              41.918628865183045
+              -90.25920867919922,
+              38.61687046392973
             ],
             [
-              -114.06005859375,
-              41.983994270935625
+              -90.26195526123045,
+              38.6107004329194
+            ],
+            [
+              -90.2688217163086,
+              38.60962732987789
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Park": "Fairground Park",
+        "Dog Park": "Yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -90.22693634033203,
+              38.66983040550309
+            ],
+            [
+              -90.22899627685547,
+              38.66647967071403
+            ],
+            [
+              -90.2171516418457,
+              38.66138625351512
+            ],
+            [
+              -90.21474838256836,
+              38.66487126231641
+            ],
+            [
+              -90.22693634033203,
+              38.66983040550309
             ]
           ]
         ]
       }
     }
   ]
-}, {
-    "type": "Feature",
-    "properties": {"party": "Democrat"},
-    "geometry": {
-        "type": "Polygon",
-        "coordinates": [[
-            [-109.05, 41.00],
-            [-102.06, 40.99],
-            [-102.03, 36.99],
-            [-109.04, 36.99],
-            [-109.05, 41.00]
-        ]]
-    }
 }];
 
-L.geoJSON(states, {
+L.geoJSON(parks, {
     style: function(feature) {
         switch (feature.properties.party) {
-            case 'Republican': return {color: "#C8C9C7"};
-            case 'Democrat':   return {color: "#003DA5"};
+            case "Yes": return {color: "#C8C9C7"};
+            case "No": return {color: "#003DA5"};
         }
     }
 }).addTo(map);
-
-
-
-
